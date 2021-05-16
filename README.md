@@ -67,6 +67,14 @@ Example:
 
 goodbots prints to standard out with tab delimiters, so you can capture the output with an [output redirect](https://www.codecademy.com/learn/learn-the-command-line/modules/learn-the-command-line-redirection/cheatsheet). 
 
+**Example Output**
+```
+203.208.60.1 crawl-203-208-60-1.googlebot.com
+66.249.85.123 google-proxy-66-249-85-123.google.com
+66.249.87.12 rate-limited-proxy-66-249-87-12.google.com
+66.249.85.224 google-proxy-66-249-85-224.google.com
+```
+
 Saving verified bot IPs and hosts to a filed named `saved-results.tsv`
 
 ```
