@@ -16,30 +16,42 @@ various requests by spoofed user-agents pretending to be official search engine 
 ##  How to install/build goodbots
 Clone the repo:
 
-```git clone git@github.com:eywu/goodbots.git```
+```
+git clone git@github.com:eywu/goodbots.git
+```
 
 Change to the `/cmd/goodbots` directory:
 
-```cd goodbots/cmd/goodbots```
+```
+cd goodbots/cmd/goodbots
+```
 
 Build the binary/executable `main.go` file:
 
-```go build```
+```
+go build
+```
 
 ## How to use goodbots
-If you've built the `main.go` file that comes with goodbots above, you can simply feed goodbots IPs via standard-in. 
+If you've built the `main.go` file that comes with goodbots above, you can simply feed goodbots IPs via `standard-in`. 
 
 Test a single IP
 
-```echo "203.208.60.1" | ./goodbots```
+```
+echo "203.208.60.1" | ./goodbots
+```
 
-Test a range of IPs
+Test a range of IPs with [prips command line tool](http://manpages.ubuntu.com/manpages/bionic/man1/prips.1.html)
 
-```prips 203.208.40.1 203.208.80.1 | ./goodbots```
+```
+prips 203.208.40.1 203.208.80.1 | ./goodbots
+```
 
 Test a list of IPs from a text or csv file
 
-```./goodbots < ip-list.txt```
+```
+./goodbots < ip-list.txt
+```
 
 __note:__ The CSV or text file expects only an IP on its own line.
 
@@ -53,11 +65,21 @@ Example:
 
 ### Saving the results 
 
-goodbots prints to standard out with tab delimiters, so you can capture the output with an [output redirect](https://www.codecademy.com/learn/learn-the-command-line/modules/learn-the-command-line-redirection/cheatsheet). 
+goodbots prints to `standard-out` with tab (\t) delimiters, so you can capture the output with an [output redirect](https://www.codecademy.com/learn/learn-the-command-line/modules/learn-the-command-line-redirection/cheatsheet). 
 
-Saving verified bot IPs and hosts to a filed named `saved-results.tsv`
+**Example Output**
+```
+203.208.60.1 crawl-203-208-60-1.googlebot.com
+66.249.85.123 google-proxy-66-249-85-123.google.com
+66.249.87.12 rate-limited-proxy-66-249-87-12.google.com
+66.249.85.224 google-proxy-66-249-85-224.google.com
+```
 
-```./goodbots < ip-list.txt > saved-results.tsv```
+Save verified bot IPs provide in a file name `ip-list.txt` to a filed named `saved-results.tsv`
+
+```
+./goodbots < ip-list.txt > saved-results.tsv
+```
 
 ## DNS Resolvers
 goodbots randomly selects a different public DNS resolver for each DNS lookup to reduce the chances of being blocked or 
@@ -79,7 +101,7 @@ It uses these DNS providers:
 
 ## Supported Crawlers
 Currently verifying the domain name is a little imprecise. goodbots looks for just the domain name to match and does 
-__not__ match the TLD.
+__NOT__ match the TLD.
 
 Future improvements will test for more precise domains based on the crawlers specifications.
 
