@@ -56,6 +56,7 @@ Example:
 goodbots prints to standard out with tab delimiters, so you can capture the output with an [output redirect](https://www.codecademy.com/learn/learn-the-command-line/modules/learn-the-command-line-redirection/cheatsheet). 
 
 Saving verified bot IPs and hosts to a filed named `saved-results.tsv`
+
 ```./goodbots < ip-list.txt > saved-results.tsv```
 
 ## DNS Resolvers
