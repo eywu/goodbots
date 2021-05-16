@@ -6,7 +6,11 @@ lookups.
 2. It performs a reverse dns lookup to get a hostname (ex. `crawl-203-208-60-1.googlebot.com`) 
 3. Then does a forward dns lookup on the hostname to get an IP (ex. `66.249.87.225`) 
 4. It compares the 1st IP to the 2nd IP
-5. If they match, goodbots outputs the IP and hostname 
+5. If they match, goodbots outputs the IP and hostname
+
+## The Job-to-be-Done (#jtbd)
+In search engine optimizaiton (SEO), it is common to analyze a site's access logs (aka bot logs). Often there are 
+various requests by spoofed user-agents pretending to be official search engine crawlers like [Googlebot](https://developers.google.com/search/docs/advanced/crawling/googlebot). In order to have an accurate understanding of the site's crawl rate, we want to verify the IP address of the various crawlers.
 
 # Getting Started
 ##  How to install/build goodbots
