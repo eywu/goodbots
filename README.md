@@ -79,7 +79,7 @@ It uses these DNS providers:
 
 ## Supported Crawlers
 Currently verifying the domain name is a little imprecise. goodbots looks for just the domain name to match and does 
-__not__ match the TLD.
+__NOT__ match the TLD.
 
 Future improvements will test for more precise domains based on the crawlers specifications.
 
