@@ -9,7 +9,7 @@ lookups.
 5. If they match, goodbots outputs the IP and hostname
 
 ## The Job-to-be-Done (#jtbd)
-In search engine optimizaiton (SEO), it is common to analyze a site's access logs (aka bot logs). Often there are 
+In search engine optimization (SEO), it is common to analyze a site's access logs (aka bot logs). Often there are 
 various requests by spoofed user-agents pretending to be official search engine crawlers like [Googlebot](https://developers.google.com/search/docs/advanced/crawling/googlebot). In order to have an accurate understanding of the site's crawl rate, we want to verify the IP address of the various crawlers.
 
 # Getting Started
@@ -143,6 +143,14 @@ will output errors to the TSV output when it encounters IPs that error out when 
 66.100.4.76	(error)	lookup 76.4.100.66.in-addr.arpa. on 192.168.1.1:53: no such host
 66.100.4.126	mail.esai.com
 ```
+***
+# ToDo
+Suggestions from others
+
+via [John Murch](https://github.com/johnmurch)
+* Generate bad bot list for blacklist usage
+* Track search engine bot list over time to see changes
+
 ***
 Written in [Golang](https://golang.org/)
 ![gopher](https://user-images.githubusercontent.com/185250/118390633-f73be280-b5e4-11eb-8f60-bba0abb2f119.png)
