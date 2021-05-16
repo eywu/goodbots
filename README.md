@@ -118,3 +118,7 @@ will output errors to the TSV output when it encounters IPs that error out when 
 66.100.4.76	(error)	lookup 76.4.100.66.in-addr.arpa. on 192.168.1.1:53: no such host
 66.100.4.126	mail.esai.com
 ```
+***
+Written in [Golang](https://golang.org/)
+![gopher](https://user-images.githubusercontent.com/185250/118390633-f73be280-b5e4-11eb-8f60-bba0abb2f119.png)
+Gopher courtesy of [Gopherize.me](https://gopherize.me/)
