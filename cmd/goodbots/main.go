@@ -1,9 +1,9 @@
 package main
 
 import (
+	"context"
 	"log"
 	"os"
-	"context"
 
 	bots "github.com/eywu/goodbots"
 )
@@ -14,7 +14,7 @@ var (
 
 func main() {
 	concurrency = 10
-	//err := ResolveNames(context.Background(), os.Stdin, os.Stdout)
+	//err := bots.ResolveNames(concurrency, context.Background(), os.Stdin, os.Stdout)
 	err := bots.GoodBots(concurrency, context.Background(), os.Stdin, os.Stdout)
 	if err != nil {
 		log.Fatal(err)
