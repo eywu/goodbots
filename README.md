@@ -33,7 +33,7 @@ go build
 ```
 
 ## How to use goodbots
-If you've built the `main.go` file that comes with goodbots above, you can simply feed goodbots IPs via standard-in. 
+If you've built the `main.go` file that comes with goodbots above, you can simply feed goodbots IPs via `standard-in`. 
 
 Test a single IP
 
@@ -65,7 +65,7 @@ Example:
 
 ### Saving the results 
 
-goodbots prints to standard out with tab delimiters, so you can capture the output with an [output redirect](https://www.codecademy.com/learn/learn-the-command-line/modules/learn-the-command-line-redirection/cheatsheet). 
+goodbots prints to `standard-out` with tab (\t) delimiters, so you can capture the output with an [output redirect](https://www.codecademy.com/learn/learn-the-command-line/modules/learn-the-command-line-redirection/cheatsheet). 
 
 **Example Output**
 ```
