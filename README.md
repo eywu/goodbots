@@ -3,7 +3,7 @@ goodbots verifies the IP addresses of respectful crawlers like Googlebot by perf
 lookups.
 
 1. Given an IP address (ex. `66.249.87.225`)
-2. It performs a reverse dns lookup to get a hostname (ex. `crawl-203-208-60-1.googlebot.com`) 
+2. It performs a reverse dns lookup to get a hostname (ex. `crawl-66-249-87-225.googlebot.com`) 
 3. Then does a forward dns lookup on the hostname to get an IP (ex. `66.249.87.225`) 
 4. It compares the 1st IP to the 2nd IP
 5. If they match, goodbots outputs the IP and hostname
