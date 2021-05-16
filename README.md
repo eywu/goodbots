@@ -16,30 +16,42 @@ various requests by spoofed user-agents pretending to be official search engine 
 ##  How to install/build goodbots
 Clone the repo:
 
-```git clone git@github.com:eywu/goodbots.git```
+```
+git clone git@github.com:eywu/goodbots.git
+```
 
 Change to the `/cmd/goodbots` directory:
 
-```cd goodbots/cmd/goodbots```
+```
+cd goodbots/cmd/goodbots
+```
 
 Build the binary/executable `main.go` file:
 
-```go build```
+```
+go build
+```
 
 ## How to use goodbots
 If you've built the `main.go` file that comes with goodbots above, you can simply feed goodbots IPs via standard-in. 
 
 Test a single IP
 
-```echo "203.208.60.1" | ./goodbots```
+```
+echo "203.208.60.1" | ./goodbots
+```
 
-Test a range of IPs
+Test a range of IPs with [prips command line tool](http://manpages.ubuntu.com/manpages/bionic/man1/prips.1.html)
 
-```prips 203.208.40.1 203.208.80.1 | ./goodbots```
+```
+prips 203.208.40.1 203.208.80.1 | ./goodbots
+```
 
 Test a list of IPs from a text or csv file
 
-```./goodbots < ip-list.txt```
+```
+./goodbots < ip-list.txt
+```
 
 __note:__ The CSV or text file expects only an IP on its own line.
 
@@ -57,7 +69,9 @@ goodbots prints to standard out with tab delimiters, so you can capture the outp
 
 Saving verified bot IPs and hosts to a filed named `saved-results.tsv`
 
-```./goodbots < ip-list.txt > saved-results.tsv```
+```
+./goodbots < ip-list.txt > saved-results.tsv
+```
 
 ## DNS Resolvers
 goodbots randomly selects a different public DNS resolver for each DNS lookup to reduce the chances of being blocked or 
