@@ -9,7 +9,6 @@ lookups.
 5. If they match, goodbots outputs the IP and hostname 
 
 # Getting Started
-***
 ##  How to install/build goodbots
 Clone the repo:
 
