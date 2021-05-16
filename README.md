@@ -75,7 +75,7 @@ goodbots prints to standard out with tab delimiters, so you can capture the outp
 66.249.85.224 google-proxy-66-249-85-224.google.com
 ```
 
-Saving verified bot IPs and hosts to a filed named `saved-results.tsv`
+Save verified bot IPs provide in a file name `ip-list.txt` to a filed named `saved-results.tsv`
 
 ```
 ./goodbots < ip-list.txt > saved-results.tsv
