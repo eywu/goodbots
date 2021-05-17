@@ -151,6 +151,12 @@ via [John Murch](https://github.com/johnmurch)
 * Generate bad bot list for blacklist usage
 * Track search engine bot list over time to see changes
 
+# Other Resources
+* [Google published IP ranges](https://support.google.com/a/answer/10026322?hl=en) h/t [Michael Stapelberg](https://github.com/stapelberg)
+  * [JSON](https://www.gstatic.com/ipranges/goog.json)
+* [DuckDuckGo published IPs](https://help.duckduckgo.com/duckduckgo-help-pages/results/duckduckbot/)
+* [Facebook published IP ranges](https://developers.facebook.com/docs/sharing/webmasters/crawler/)
+
 ***
 Written in [Golang](https://golang.org/)
 ![gopher](https://user-images.githubusercontent.com/185250/118390633-f73be280-b5e4-11eb-8f60-bba0abb2f119.png)
