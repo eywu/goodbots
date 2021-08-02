@@ -1,4 +1,5 @@
 # goodbots - trust but verify
+![goodbots ip lookup example on googlebot ips](https://gist.github.com/eywu/0a7c55cb70d84e8ed3bf070acc52b2ec/raw/b3174dbdaa543c7f55039fe9c69815bbbeb436b5/goodbots.gif)
 goodbots verifies the IP addresses of respectful crawlers like Googlebot by performing [reverse dns](https://searchsignals.com/how-to-do-a-reverse-dns-lookup) and forward dns 
 lookups.
 
