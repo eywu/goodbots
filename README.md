@@ -153,8 +153,10 @@ via [John Murch](https://github.com/johnmurch)
 * Track search engine bot list over time to see changes
 
 # Other Resources
-* [Google published IP ranges](https://support.google.com/a/answer/10026322?hl=en) h/t [Michael Stapelberg](https://github.com/stapelberg)
-  * [JSON](https://www.gstatic.com/ipranges/goog.json)
+* [Google Documentation on Verifying Googlebot](https://developers.google.com/search/docs/advanced/crawling/verifying-googlebot?hl=en)
+  * [JSON feed of Googlebot IPv4 and IPv6 ranges](https://developers.google.com/search/apis/ipranges/googlebot.json)
+* [Google published IP ranges for Google API + services](https://support.google.com/a/answer/10026322?hl=en) h/t [Michael Stapelberg](https://github.com/stapelberg)
+  * [JSON feed](https://www.gstatic.com/ipranges/goog.json)
 * [DuckDuckGo published IPs](https://help.duckduckgo.com/duckduckgo-help-pages/results/duckduckbot/)
 * [Facebook published IP ranges](https://developers.facebook.com/docs/sharing/webmasters/crawler/)
 
