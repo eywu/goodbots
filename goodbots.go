@@ -68,6 +68,10 @@ func ForwardDNS(host string) (string, error) {
 		},
 	}
 	ip, err := r.LookupIPAddr(context.Background(), host)
+	if err != nil {
+		return "", err
+	}
+
 	return ip[0].IP.String(), err
 }
 
