@@ -160,15 +160,6 @@ will output errors to the TSV output when it encounters IPs that error out when 
 
 ---
 
-# ToDo
-
-Suggestions from others
-
-via [John Murch](https://github.com/johnmurch)
-
-- Generate bad bot list for blacklist usage
-- Track search engine bot list over time to see changes
-
 # Other Resources
 
 - [Google Documentation on Verifying Googlebot](https://developers.google.com/search/docs/advanced/crawling/verifying-googlebot?hl=en)
@@ -176,7 +167,15 @@ via [John Murch](https://github.com/johnmurch)
 - [Google published IP ranges for Google API + services](https://support.google.com/a/answer/10026322?hl=en) h/t [Michael Stapelberg](https://github.com/stapelberg)
   - [JSON feed](https://www.gstatic.com/ipranges/goog.json)
 - [DuckDuckGo published IPs](https://help.duckduckgo.com/duckduckgo-help-pages/results/duckduckbot/)
+  - [DuckAssistBot published IPs](https://duckduckgo.com/duckduckgo-help-pages/results/duckassistbot)
 - [Facebook published IP ranges](https://developers.facebook.com/docs/sharing/webmasters/crawler/)
+- [Pinterest: Verify pinterestbot](https://help.pinterest.com/en/business/article/pinterestbot)
+- [Apple: Verify applebot](https://support.apple.com/en-us/119829)
+- [Internet Archive: Verify archive.org_bot](http://crawler.archive.org/index.html)
+- [Bidu: Verify baiduspider](https://help.baidu.com/question?prod_id=99&class=0&id=3001)
+- [Yandex: Verify yadex crawlers](https://yandex.com/support/webmaster/en/robot-workings/check-yandex-robots.html)
+- [Cốc Cốc: Verify coccocbot](https://coccoc.com/search/console/en/coc-coc-robots)
+- [Yahoo: Verify slurp](https://help.yahoo.com/kb/search-for-desktop/SLN22600.html?impressions=true)
 
 ---
 
