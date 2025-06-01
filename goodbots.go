@@ -147,7 +147,7 @@ func GoodBots(cc int64, ctx context.Context, r io.Reader, w io.Writer) error {
 			h := strings.TrimRight(host[0], ".")
 			hname, _ := tld.Parse(h)
 
-			tf, _ := botDomain(hname.SLD)
+			tf := botDomain(hname.SLD)
 
 			if !tf {
 				return
