@@ -4,6 +4,8 @@
 goodbots verifies the IP addresses of respectful crawlers like Googlebot by performing [reverse dns](https://searchsignals.com/how-to-do-a-reverse-dns-lookup) and forward dns
 lookups.
 
+> Latest release: **v0.0.3-cetoddle**
+
 1. Given an IP address (ex. `66.249.87.225`)
 2. It performs a reverse dns lookup to get a hostname (ex. `crawl-66-249-87-225.googlebot.com`)
 3. Then does a forward dns lookup on the hostname to get an IP (ex. `66.249.87.225`)
@@ -14,6 +16,16 @@ lookups.
 
 In search engine optimization (SEO), it is common to analyze a site's access logs (aka bot logs). Often there are
 various requests by spoofed user-agents pretending to be official search engine crawlers like [Googlebot](https://developers.google.com/search/docs/advanced/crawling/googlebot). In order to have an accurate understanding of the site's crawl rate, we want to verify the IP address of the various crawlers.
+
+## What's new in v0.0.3-cetoddle
+
+- Significant performance improvements for bulk DNS verification
+- Configurable concurrency with `-c` (default now `50`)
+- New `-mode` flag for `goodbots` vs `resolve`
+- Safer output writing with buffered single-writer channel architecture
+- Per-lookup context timeouts
+- Last-line input handling fix for files without trailing newline
+- Expanded test coverage for concurrency, timeout behavior, and DNS server selection
 
 # Getting Started
 
@@ -91,8 +103,7 @@ Save verified bot IPs provide in a file name `ip-list.txt` to a filed named `sav
 
 ## DNS Resolvers
 
-goodbots randomly selects a different public DNS resolver for each DNS lookup to reduce the chances of being blocked or
-throttled by your DNS provider if you have lots of IPs to verify.
+goodbots uses a deterministic **round-robin** strategy across public DNS resolvers for each lookup. This provides stable load balancing while keeping throughput high on large batches.
 
 It uses these DNS providers:
 
@@ -134,17 +145,28 @@ Future improvements will test for more precise domains based on the crawlers spe
 
 ## Make it go faster!
 
-By default we only set the concurrency of requests to 10. If you want to speed up the work, you can increase that
-number by modifying the `main.go` file before building the binary/executable.
+Use the `-c` flag to control concurrency (default: `50`).
+
+```bash
+./goodbots -c 100 < ip-list.txt
+```
 
 # Other usage of goodbots
 
-In building goodbots, we created a general purpose function for simply resolving the hostnames of any IP address.
+You can switch between verification and raw reverse-DNS resolution with the `-mode` flag:
 
-In `main.go` you can uncomment the line that calls `ResolveNames()` and comment out the `GoodBots()` function call.
+- `-mode goodbots` (default): reverse + forward validation
+- `-mode resolve`: reverse-only hostname resolution (includes errors in TSV output)
 
-This will not perform a forward DNS lookup to verify the hostname resolves to the same IP address. Additionally, it
-will output errors to the TSV output when it encounters IPs that error out when requesting the hostname.
+Examples:
+
+```bash
+# verify bot IPs (default mode)
+./goodbots -mode goodbots < ip-list.txt
+
+# resolve hostnames only
+./goodbots -mode resolve < ip-list.txt
+```
 
 ```
 ➜  goodbots git:(main) ✗ prips -i 50 66.100.0.0 66.200.0.0 | ./goodbots

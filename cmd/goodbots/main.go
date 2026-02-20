@@ -2,20 +2,25 @@ package main
 
 import (
 	"context"
+	"flag"
 	"log"
 	"os"
 
 	bots "github.com/eywu/goodbots"
 )
 
-var (
-	concurrency int64
-)
-
 func main() {
-	concurrency = 10
-	//err := bots.ResolveNames(concurrency, context.Background(), os.Stdin, os.Stdout)
-	err := bots.GoodBots(concurrency, context.Background(), os.Stdin, os.Stdout)
+	concurrency := flag.Int64("c", 50, "concurrency limit (number of parallel DNS lookups)")
+	mode := flag.String("mode", "goodbots", "mode: \"goodbots\" to verify bot IPs, \"resolve\" to resolve all IPs")
+	flag.Parse()
+
+	var err error
+	switch *mode {
+	case "resolve":
+		err = bots.ResolveNames(*concurrency, context.Background(), os.Stdin, os.Stdout)
+	default:
+		err = bots.GoodBots(*concurrency, context.Background(), os.Stdin, os.Stdout)
+	}
 	if err != nil {
 		log.Fatal(err)
 	}
